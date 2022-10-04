@@ -17,7 +17,8 @@
 
         <!-- <button text="Start FPS overlay" on:tap="{startFPSMeter}"></button>
         <button text="Stop FPS overlay" on:tap="{stopFPSMeter}"></button> -->
-
+        
+        <button text="KCAL" backgroundColor="#0388fc" on:tap="{ () => navigate({ page: Kcal }) }"></button>
     </flexboxLayout>
 
 </page>
@@ -26,7 +27,9 @@
     
     import { onMount } from 'svelte';
     import { get_oplus_touchrate, touchrate_switch, fsync_switch, get_hbm, hdm_switch, get_dt2w, get_dcd, dcd_switch, d2tw_switch, get_adrenoboost, set_adrenoboost } from '../lib/call';
-    import { startFPSMeter, stopFPSMeter } from '~/lib/fps';
+    import Kcal from './Kcal.svelte';
+	import { navigate } from 'svelte-native';
+    // import { startFPSMeter, stopFPSMeter } from '~/lib/fps';
     import Switch from '../lib/components/switch.svelte';
     
     let fsync = false, touchrate = false, hbm = false, dt2w = false, dcd = false, adreno_boost = false;
